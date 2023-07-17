@@ -26,10 +26,10 @@ jobs:
       - name: Docker label info
         id: docklabel
         run: |
-          echo "::set-output name=ref::$GITHUB_REF_NAME"
-          echo "::set-output name=sha::$GITHUB_SHA"
-          echo "::set-output name=repo::$GITHUB_REPOSITORY"
-          echo "::set-output name=timestamp::$(date '+%Y%m%d_%H%M%S')"
+          echo "ref=$GITHUB_REF_NAME" >> $GITHUB_OUTPUT
+          echo "sha=$GITHUB_SHA" >> $GITHUB_OUTPUT
+          echo "repo=$GITHUB_REPOSITORY" >> $GITHUB_OUTPUT
+          echo "timestamp=$(date '+%Y%m%d_%H%M%S')" >> $GITHUB_OUTPUT
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
