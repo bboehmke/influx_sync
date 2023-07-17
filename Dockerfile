@@ -11,4 +11,4 @@ FROM scratch
 # copy app from build image
 COPY --from=0 /influx_sync /influx_sync
 
-CMD "/influx_sync"
+ENTRYPOINT "/influx_sync"
